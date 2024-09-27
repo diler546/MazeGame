@@ -211,7 +211,7 @@
             // Отобразим путь в виде символов '.'
             foreach (var (X, Y) in path)
             {
-                if (maze[X, Y] == ' ')  // Обновляем только свободные клетки
+                if (maze[X, Y] == ' ')
                 {
                     maze[X, Y] = '.';
                     Console.SetCursorPosition(Y, X);
@@ -257,7 +257,6 @@
         return false;
     }
 
-    // Очистка пути (возвращаем '.' в ' ')
     private static void ClearPath()
     {
         for (var i = 0; i < height; i++)
