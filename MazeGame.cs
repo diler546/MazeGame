@@ -55,7 +55,9 @@
         }
     }
 
-    // Генерация лабиринта с помощью DFS
+    /// <summary>
+    /// Генерация лабиринта с помощью DFS
+    /// </summary>
     private static void GenerateMaze()
     {
         maze = new char[width, height];
@@ -106,7 +108,12 @@
         maze[finishX, finishY] = 'F';  // Помещаем финиш
     }
 
-    // Функция получения непосещенных соседей
+    /// <summary>
+    /// Функция получения непосещенных соседей
+    /// </summary>
+    /// <param name="x"></param>
+    /// <param name="y"></param>
+    /// <returns></returns>
     private static List<(int X, int Y)> GetUnvisitedNeighbors(int x, int y)
     {
         var neighbors = new List<(int X, int Y)>();
@@ -130,7 +137,9 @@
         return neighbors;
     }
 
-    // Функция для отображения лабиринта
+    /// <summary>
+    /// Функция для отображения лабиринта
+    /// </summary>
     private static void DrawMazeAndDisplayHelp()
     {
         Console.Clear();
@@ -165,7 +174,11 @@
         Console.WriteLine("Esc - Завершить игру");
     }
 
-    // Перемещение игрока
+    /// <summary>
+    /// Перемещение игрока
+    /// </summary>
+    /// <param name="dx"></param>
+    /// <param name="dy"></param>
     private static void MovePlayer(int dx, int dy)
     {
         var newX = playerX + dx;
@@ -195,7 +208,9 @@
         }
     }
 
-    // Поиск пути и отображение его символом '.'
+    /// <summary>
+    /// Поиск пути и отображение его символом '.'
+    /// </summary>
     private static void ShowPathToFinish()
     {
         // Используем простой поиск пути (DFS)
@@ -222,7 +237,14 @@
         }
     }
 
-    // Рекурсивный DFS для поиска пути от игрока до финиша
+    /// <summary>
+    /// Рекурсивный DFS для поиска пути от игрока до финиша
+    /// </summary>
+    /// <param name="x"></param>
+    /// <param name="y"></param>
+    /// <param name="visited"></param>
+    /// <param name="path"></param>
+    /// <returns></returns>
     private static bool DFS(int x, int y, bool[,] visited, Stack<(int X, int Y)> path)
     {
         // Если достигли финиша
